@@ -75,16 +75,51 @@ public class Matrix implements IMatrix{
 
     @Override
     public IMatrix sub(IMatrix otherMatrix) throws IllegalArgumentException, NullPointerException {
-        return null;
+
+        if(this.getRows() != otherMatrix.getRows()){
+            System.out.println("Кол-во строк матриц не совпадает!!!");
+            return null;
+        }
+        if (this.getColumns() != otherMatrix.getColumns()){
+            System.out.println("Кол-во колонок матриц не совпадает!!!");
+            return null;
+        }
+
+        Matrix result = new Matrix(this.getRows(), this.getColumns());
+        for(int i = 0; i < this.getRows(); i++){
+            for(int j = 0; j < this.getColumns(); j++){
+                result.setValueAt(i, j, this.getValueAt(i, j) - otherMatrix.getValueAt(i, j));
+            }
+        }
+
+        return result;
     }
 
     @Override
     public IMatrix mul(IMatrix otherMatrix) throws IllegalArgumentException, NullPointerException {
-        return null;
+
+        if (this.getColumns() != otherMatrix.getRows()){
+            System.out.println("Такие матрицы нельзя перемножить. Количество столбцов первой матрицы должно быть равно количеству строк второй матрицы!");
+            return null;
+        }
+
+        Matrix result = new Matrix(this.getRows(), otherMatrix.getColumns());
+        for (int i = 0; i < this.getRows(); i++){
+            for (int j = 0; j < otherMatrix.getColumns(); j++){
+
+                for (int k = 0; k < this.getRows(); k++){
+                     result[i][j] += this[i][k] * otherMatrix[k][j];
+                }
+            }
+        }
+
+
+        return result;
     }
 
     @Override
     public IMatrix mul(double value) {
+
         return null;
     }
 
