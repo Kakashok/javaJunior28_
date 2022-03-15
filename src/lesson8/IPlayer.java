@@ -7,4 +7,10 @@ public interface IPlayer {
     boolean needMoreCards();
 
     void  openHand();
+
+    int valuesHand();
+
+     boolean isCanWin();
+
+    void setCanWin(boolean canWin);
 }

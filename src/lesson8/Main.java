@@ -16,16 +16,5 @@ public class Main {
         blackJack.dealRemainingCards();
         blackJack.printWinner();
 
-        Koloda koloda = new Koloda();
-        System.out.println(koloda.randomCard());
-        System.out.println(koloda.randomCard());
-        System.out.println(koloda.randomCard());
-
-        player1.addCardToHand(koloda.randomCard());
-        player1.addCardToHand(koloda.randomCard());
-        player1.addCardToHand(koloda.randomCard());
-        player1.openHand();
-
-
     }
 }
