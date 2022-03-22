@@ -36,10 +36,10 @@ public class Main {
         Matrix matrix6 = new Matrix(num6);
 
 
-//        matrix1.printToConsole();
-//        matrix1.setValueAt(0,2, 444);
-//        double value = matrix1.getValueAt(0,2);
-//        System.out.println(value);
+        matrix1.printToConsole();
+        matrix1.setValueAt(0,2, 444);
+       double value = matrix1.getValueAt(0,2);
+       System.out.println(value);
 
         IMatrix resultAdd = matrix1.add(matrix2);
         resultAdd.printToConsole();
