@@ -32,7 +32,8 @@ public class ExampleStream {
 
         Stream.of(student, student2, student3, student4, student5)
 //                .sorted((s1,s2) -> s1.getAge() - s2.getAge())
-                .sorted(Comparator.comparing(Students::getCourse)
+                .sorted(Comparator
+                        .comparing(Students::getCourse)
                         .thenComparing(Students::getAge)
                         .thenComparing(Students::getName))
                 .distinct()

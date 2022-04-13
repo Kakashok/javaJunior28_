@@ -1,5 +1,8 @@
 package lesson18InnerClassLesson20;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Students {
     private String name;
     private String lastname;
@@ -7,6 +10,7 @@ public class Students {
     private Character sex;
     private Integer course;
     private Double avgMark;
+    private List<String> stringList = new ArrayList<>();
 
     public Students(String name, String lastname, Integer age, Character sex, Integer course, Double avgMark) {
         this.name = name;
@@ -17,6 +21,13 @@ public class Students {
         this.avgMark = avgMark;
     }
 
+    public List<String> getStringList() {
+        return stringList;
+    }
+
+    public void setStringList(List<String> stringList) {
+        this.stringList = stringList;
+    }
 
     public String getName() {
         return name;
